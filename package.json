@@ -1,28 +1,32 @@
 {
-  "name": "telegrambo-extension-name",
+  "name": "telegrambo-send-file",
   "version": "0.0.0",
-  "description": "Description for telegrambo extension",
+  "description": "Telegrambo method for sending local file",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "nodemon --env-file .env ./test.js"
+    "dev": "nodemon --env-file .env ./index.js",
+    "test": "node --env-file .env ./test.js"
   },
   "keywords": [
     "telegrambo",
     "extension"
   ],
-  "author": "author",
+  "author": "headmad",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/author/telegrambo-extension-name.git"
+    "url": "git+https://github.com/headmad/telegrambo-send-file.git"
   },
   "bugs": {
-    "url": "https://github.com/author/telegrambo-extension-name/issues"
+    "url": "https://github.com/headmad/telegrambo-send-file/issues"
   },
-  "homepage": "https://github.com/author/telegrambo-extension-name#readme",
+  "homepage": "https://github.com/author/telegrambo-send-file#readme",
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^3.0.1",
     "telegrambo": "^0.6.0"
+  },
+  "dependencies": {
+    "form-data": "^4.0.0"
   }
 }

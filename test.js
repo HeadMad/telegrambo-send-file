@@ -1,20 +1,12 @@
 import telegrambo from "telegrambo";
-import extensionName from "./index.js";
+import sendFile from "./index.js";
 
 const bot = telegrambo(process.env.BOT_TOKEN);
-bot.extensionName = extensionName;
 
-bot.extensionName('First Argument', {
-  secondArgument: 'Second Argument'
-});
+bot.sendFile = sendFile(process.env.BOT_TOKEN);
 
-(async () => {
-  const {ok, result} = await bot.getUpdates();
-
-  if (ok) 
-    for (const update of result) {
-      bot.setUpdate(update);
-    }
-
-})();
+bot.sendFile('photo', {
+  chat_id: process.env.CHAT_ID,
+  photo: './test.jpg',
+}).then(console.log);
 
