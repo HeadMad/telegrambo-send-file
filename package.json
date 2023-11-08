@@ -1,7 +1,7 @@
 {
   "name": "telegrambo-send-file",
   "version": "0.0.0",
-  "description": "Telegrambo method for sending local file",
+  "description": "Telegrambo method for sending local files",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/headmad/telegrambo-send-file/issues"
   },
-  "homepage": "https://github.com/author/telegrambo-send-file#readme",
+  "homepage": "https://github.com/headmad/telegrambo-send-file#readme",
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^3.0.1",

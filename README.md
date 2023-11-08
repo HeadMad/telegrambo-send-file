@@ -1,15 +1,15 @@
-# Telegrambo Extension Name
+# Telegrambo Send File
 
-Description of Telegrambo Extension
+Extension for sending local files as [inputFile](https://core.telegram.org/bots/api#inputfile) using using multipart/form-data. It cam be sended as document, photo, video, audio, voice, video-note, animation, sticker or media group.
 
 <br>
 
 ## Installation
 
-<br>You can install Telegrambo using npm:
+<br>You can install Telegrambo Send File using npm:
 
 ```
-npm install telegrambo-extension-name
+npm install telegrambo-send-file
 ```
 <br>
 
@@ -20,12 +20,12 @@ npm install telegrambo-extension-name
 // bot.js
 
 import telegrambo from 'telegrambo';
-import extensionName  from 'telegrambo-extension-name';
+import sendFile  from 'telegrambo-send-file';
 
 const bot = telegrambo(process.env.YOU_BOT_TOKEN);
 
 // Initialize new method for bot
-bot.extensionName = extensionName;
+bot.sendFile = sendFile(process.env.YOU_BOT_TOKEN);
 
 // And for event context
 bot.event.extensionName = extensionName
@@ -33,22 +33,45 @@ bot.event.extensionName = extensionName
 
 **Returns:**
 
-- `function`: A new method that get arguments:
-  - `firstArgument` (string, required) - Description of firstArgument.
-  - `secondArgument` (object, optional) - Description of secondArgument.
+- `function`: A new method that get argument:
+  - `payload` (object, required) - Payload one of methods, where bot send local file.
 
-<br>Example of using in bot:
+<br>Example of sending photo:
 
 ```js
-bot.extensionName(`firstArgument`, {
-  secondArgument: true
+bot.sendFile({
+  chat_id: process.env.CHAT_ID,
+  photo: './test.jpg'
 });
 ```
 
-<br>Or using in event context:
+<br>Or sending file as document:
 
 ```js
-bot.on('message', (event) => {
-  event.extensionName(firstArgument);
+bot.sendFile({
+  chat_id: process.env.CHAT_ID,
+  document: './test.jpg'
+});
+```
+
+<br>Or media group:
+
+```js
+bot.sendFile({
+  chat_id: process.env.CHAT_ID,
+  media: [
+    {
+      type: 'photo'
+      photo: './test1.jpg'
+    },
+    {
+      type: 'photo',
+      photo: 'CAACaGqaaXKdaaidUMvlVKR8Hr2mQMTgJFYTMjE62L2OaalObaacH4nKuSrNuFTOBDuaMwQ'
+    },
+    {
+      type: 'photo',
+      photo: 'https://my-site.com/photo.jpg'
+    }
+  ]
 });
 ```
