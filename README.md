@@ -26,9 +26,6 @@ const bot = telegrambo(process.env.YOU_BOT_TOKEN);
 
 // Initialize new method for bot
 bot.sendFile = sendFile(process.env.YOU_BOT_TOKEN);
-
-// And for event context
-bot.event.extensionName = extensionName
 ```
 
 **Returns:**
