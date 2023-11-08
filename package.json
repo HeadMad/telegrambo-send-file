@@ -1,6 +1,6 @@
 {
   "name": "telegrambo-send-file",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Telegrambo method for sending local files",
   "main": "index.js",
   "type": "module",
